@@ -1,19 +1,23 @@
 export default class Device {
-	private deviceElement: HTMLElement;
-	private displayElement: HTMLElement;
+	private _deviceElement: HTMLElement;
+	private _displayElement: HTMLElement;
 	private homeButtonElement: HTMLElement;
 
 	private homeButtonDownStartTime: number;
 
-	constructor(deviceElement: HTMLElement) {
-		this.deviceElement = deviceElement;
+	public getDisplayElement() {
+		return this._displayElement;
+	}
+
+	public constructor(deviceElement: HTMLElement) {
+		this._deviceElement = deviceElement;
 
 		const displayElement = deviceElement.querySelector(".device-display");
 		if (!displayElement || !(displayElement instanceof HTMLElement)) {
 			throw new Error("Device has no display or the display is invalid!");
 		}
 
-		this.displayElement = displayElement;
+		this._displayElement = displayElement;
 
 		const homeButtonElement = deviceElement.querySelector(".device-bottom > .home-button");
 		if (!homeButtonElement || !(homeButtonElement instanceof HTMLElement)) {
@@ -30,6 +34,9 @@ export default class Device {
 
 		this.homeButtonElement = homeButtonElement;
 		this.homeButtonDownStartTime = 0;
+
+		void this._deviceElement;
+		void this._displayElement;
 	}
 
 	private homeButtonPointerDownHandler(ev: PointerEvent) {

@@ -1,0 +1,18 @@
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: inherit;
+	user-select: none;
+}
+
+html, body {
+	width: 100vw;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+:root {
+	/* Add vars if needed. */
+	--garbage: 0;
+}
