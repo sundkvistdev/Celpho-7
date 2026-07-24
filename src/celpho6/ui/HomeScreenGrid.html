@@ -5,159 +5,8 @@
 
 	(injected into app container.)
 -->
-<style>
-	._approot {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		inset: 0;
-		
-		background-image: url('./SlotImage.png');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-
-		& > .status-bar {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-
-			padding: 0.125rem;
-
-			color: white;
-			text-shadow:
-				-1px -1px 0 black,
-				1px -1px 0 black,
-				-1px  1px 0 black,
-				1px  1px 0 black;
-			background-color: rgba(0, 0, 0, 0.25);
-
-			& > * {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-
-				&.on-left {
-					justify-content: flex-start;
-				}
-
-				&.on-right {
-					justify-content: flex-end;
-				}
-			}
-		}
-	}
-
-	._dockedHomePage {
-		display: flex;
-		flex-direction: column;
-		
-		flex-grow: 1;
-		flex-shrink: 0;
-
-		padding: 1rem;
-		gap: 1rem;
-
-		& > .page-content {
-			position: relative;
-			display: flex;
-			flex-grow: 1;
-			flex-shrink: 0;
-		}
-
-		& > .dock {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-
-			padding: 0.5rem;
-
-			flex-grow: 0;
-			flex-shrink: 0;
-
-			border-radius: 0.5rem;
-
-			background-color: rgba(255, 255, 255, 0.25);
-
-			& > .grid-item {
-				display: flex;
-				flex-direction: column;
-
-				align-items: center;
-				justify-content: center;
-
-				width: 100%;
-				height: 100%;
-
-				padding: 0.5rem;
-				gap: 1rem;
-
-				cursor: pointer;
-
-				& > .icon {
-					font-size: 2rem;
-				}
-
-				& > .icon-text {
-					color: white;
-					text-shadow:
-						-1px -1px 0 black,
-						1px -1px 0 black,
-						-1px  1px 0 black,
-						1px  1px 0 black;
-				}
-
-				&:active {
-					background-color: rgba(0, 110, 153, 0.5);
-				}
-			}
-		}
-	}
-
-	._labeledIconGridPage {
-		display: grid;
-		width: 100%;
-		height: 100%;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(4, 1fr);
-
-		& > .grid-item {
-			display: flex;
-			flex-direction: column;
-
-			align-items: center;
-			justify-content: center;
-
-			width: 100%;
-			height: 100%;
-
-			padding: 0.5rem;
-			gap: 1rem;
-
-			cursor: pointer;
-
-			& > .icon {
-				font-size: 2rem;
-			}
-
-			& > .icon-text {
-				color: white;
-				text-shadow:
-					-1px -1px 0 black,
-					1px -1px 0 black,
-					-1px  1px 0 black,
-					1px  1px 0 black;
-			}
-
-			&:active {
-				background-color: rgba(0, 110, 153, 0.5);
-			}
-		}
-	}
-</style>
-<div class="_approot">
-	<div class="status-bar">
+<div class="c6-full-screen-page flex-vertical c6-wallpaper-test">
+	<div class="c6-status-bar">
 		<div class="on-left">
 			<span>12:34</span>
 		</div>
@@ -165,75 +14,19 @@
 			📶🪫
 		</div>
 	</div>
-	<div class="_dockedHomePage">
-		<div class="page-content">
-			<div class="_labeledIconGridPage">
-				<div class="grid-item">
-					<div class="icon">🗑️</div>
-					<div class="icon-text">Dumpster</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">📦</div>
-					<div class="icon-text">Box</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🛢️</div>
-					<div class="icon-text">Barrel</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🪑</div>
-					<div class="icon-text">Chair</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">📺</div>
-					<div class="icon-text">TV</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">💻</div>
-					<div class="icon-text">Laptop</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">📱</div>
-					<div class="icon-text">Phone</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🔋</div>
-					<div class="icon-text">Battery</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🔧</div>
-					<div class="icon-text">Toolbox</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🚲</div>
-					<div class="icon-text">Bicycle</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🛒</div>
-					<div class="icon-text">Cart</div>
-				</div>
-				<div class="grid-item">
-					<div class="icon">🧸</div>
-					<div class="icon-text">Toy</div>
+	<div class="c6-area-with-dock">
+		<div class="area">
+			<div class="c6-icon-item-grid">
+				<div class="c6-icon-item">
+					<div class="item-icon">🗑️</div>
+					<div class="item-text">Item test with long test and a bin icon !!!! much text hello</div>
 				</div>
 			</div>
 		</div>
 		<div class="dock">
-			<div class="grid-item">
-				<div class="icon">📱</div>
-				<div class="icon-text">Apps</div>
-			</div>
-			<div class="grid-item">
-				<div class="icon">📡</div>
-				<div class="icon-text">Network</div>
-			</div>
-			<div class="grid-item">
-				<div class="icon">⚙️</div>
-				<div class="icon-text">Settings</div>
-			</div>
-			<div class="grid-item">
-				<div class="icon">💾</div>
-				<div class="icon-text">Storage</div>
+			<div class="c6-icon-item">
+				<div class="item-icon">🔧</div>
+				<div class="item-text">Tool</div>
 			</div>
 		</div>
 	</div>
