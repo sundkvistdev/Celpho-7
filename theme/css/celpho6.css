@@ -88,6 +88,7 @@
 	}
 
 	& > .item-text {
+		display: -webkit-box;
 		width: 100%;
 		min-height: 0;
 		max-width: 100%;
@@ -102,7 +103,12 @@
 		text-align: center;
 		text-overflow: ellipsis;
 		overflow-wrap: anywhere;
+		overflow: hidden;
 		word-break: break-word;
+
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
 	}
 
 	&:active {
@@ -153,6 +159,7 @@
 	/* ! text wrap fix: */
 	flex-grow: 0;
 	flex-shrink: 1;
+	flex-basis: content;
 
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, 1fr);

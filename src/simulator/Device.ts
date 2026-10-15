@@ -39,6 +39,18 @@ export default class Device {
 		void this._displayElement;
 	}
 
+	public swapDisplayTo(displayElement: HTMLElement) {
+		const parent = this._displayElement.parentElement;
+
+		if (!parent) {
+			throw new Error("Unable to swap display");
+		}
+
+		displayElement.classList.add(this._displayElement.className);
+
+		parent.replaceChild(displayElement, this._displayElement);
+	}
+
 	private homeButtonPointerDownHandler(ev: PointerEvent) {
 		this.homeButtonDownStartTime = performance.now();
 		this.homeButtonElement.setPointerCapture(ev.pointerId);
